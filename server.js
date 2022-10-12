@@ -21,7 +21,7 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 
 //default route
-app.use(`/`, taskRoute)
+app.get(`/`, taskRoute)
 
 //pnf
 app.all(`*`, (req,res)=> {
