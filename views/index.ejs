@@ -39,6 +39,47 @@
                 <h3 class="display-3 text-success">Task list</h3>
             </div>
         </div>
+        <div class="row">
+            <% tasks.forEach((item,index)=> { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-center"><%= item.title %></h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group">
+                                    <details>
+                                        <summary>Content</summary>
+                                        <p class="text-justify"><%= item.conten %></p>
+                                    </details>
+                                </li>
+
+                                <li class="list-grouup-item">
+                                       <strong>Start date</strong>
+                                       <span class="float-end"><% item.start %></span>
+                                </li>
+
+                                <li class="list-grouup-item">
+                                    <strong>End date</strong>
+                                    <span class="float-end"><% item.end %></span>
+                             </li>
+
+                             <li class="list-grouup-item">
+                                <strong>Created by</strong>
+                                <span class="float-end"><% item.user %></span>
+                         </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-footer">
+                            <a href="/update/<%= item._id %>" class="btn bg-primary">Edit</a>
+                            <a href="/delete/<%= item._id %>" class="btn bg-success">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            <%}) %>
+        </div>
      </div>
 
 
